@@ -1,0 +1,29 @@
+# Sum-of-digits-of-numbers-
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        int sum = 0;
+        int temp = Math.abs(number); // To handle negative numbers
+
+        // Calculate the sum of digits
+        while (temp > 0) {
+            sum += temp % 10; // Add the last digit to sum
+            temp /= 10;       // Remove the last digit
+        }
+
+        // Output the result
+        System.out.println("The sum of the digits of " + number + " is: " + sum);
+
+        scanner.close();
+    }
+}
+output:
+Enter a number: 1234
+The sum of the digits of 1234 is: 10
